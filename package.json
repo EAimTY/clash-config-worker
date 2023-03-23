@@ -1,0 +1,42 @@
+{
+  "name": "clash-config-worker",
+  "version": "0.0.0",
+  "dependencies": {
+    "js-yaml": "4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4",
+    "@types/js-yaml": "4",
+    "@typescript-eslint/eslint-plugin": "5",
+    "@typescript-eslint/parser": "5",
+    "eslint": "8",
+    "eslint-config-airbnb": "19",
+    "eslint-config-airbnb-typescript": "17",
+    "typescript": "5",
+    "wrangler": "2"
+  },
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler publish"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "airbnb-typescript/base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "ignorePatterns": [
+      "dist/**/*",
+      "webpack.config.js"
+    ]
+  }
+}
